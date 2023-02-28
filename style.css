@@ -1,0 +1,31 @@
+#heading1{
+    color: white;
+    text-align: center;
+    background-color: palevioletred;
+}
+
+#signupbutt:hover{
+    color: palevioletred;
+    background-color: white;
+   
+}
+/* 
+#dispname{
+    background-color: yellow;
+    width: 250px;
+    height: 100px;
+    margin-left: 80%;
+    margin-bottom: 100%;
+} */
+
+#dispname{
+    margin-left: 80%;
+}
+
+#protocheck{
+    margin-left: 70%;
+}
+
+#cartul{
+    list-style-type: none;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1> Please login with your credentials </h1>
+    <label for="">Email:</label> <input type="text" name="" class="form-control" id="userLoginName"> <br> <br>
+    <label for="">Password:</label> <input type="password" name="" class="form-control" id=" userLoginPass"> <br> <br>
+    <button onclick="loginUser()" class="btn btn-secondary" >Login </button> <br> <br>
+    <span> Don't have an account? <a href="./signupuser.html"> <button class="btn btn-secondary" >Sign Up</button> </a> </span>
+
+
+
+    <script>
+        var userName = localStorage.getItem("userName")
+        var userPass = localStorage.getItem("userPass")
+        var enteredName = document.getElementById('userLoginName')
+        var enteredPass = document.getElementById('userLoginPass')
+
+
+        function loginUser() {
+            // console.log(restName + restPass)
+            // console.log(enteredPass.value)
+            // console.log(userPass)
+            if (enteredName.value == userName && enteredPass.value == userPass) {
+                alert("login successful")
+                location.href = "./index.html"
+            } else if (enteredName.value == "" || enteredPass.value == "") {
+                alert("please fill the fields")
+            }
+
+            else {
+                alert("Please enter registered password")
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

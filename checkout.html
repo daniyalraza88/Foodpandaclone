@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body> <div style="text-align: center;" > <br>
+    <h1>check out</h1> <br>
+    <ul id="cartul"> </ul>
+
+    <h2>Order total</h2>
+    <h2 id="ordertotal"></h2>
+    <br> <br>
+    <button onclick="placeOrder()" class="btn btn-success"> Place Order! </button>
+</div>
+    <script>
+        var abc = document.getElementById('cartul');
+        var ordertotal = 0;
+        var arr = [];
+        for (i = 0; i < sessionStorage.length; i++) {
+            // ordertotal = arr[i].price + ordertotal;
+            // console.log(arr[0].price)
+            // console.log(arr[0])
+            // j = i+1;
+            // var key1 = "Item " +i
+            // var key2 = key1.name
+            var itemname = JSON.parse(sessionStorage.getItem("Item " + i))
+
+            // console.log(itemname)
+            arr.push(itemname)
+            // console.log(arr[i].price)
+            var a = parseInt(arr[i].price)
+            ordertotal = ordertotal + a
+            console.log(ordertotal)
+            var createlist = document.createElement('li')
+            var createname = document.createTextNode(arr[i].name)
+            var spaces = document.createTextNode(" ")
+            var createprice = document.createTextNode(arr[i].price)
+
+            createlist.appendChild(createname)
+            createlist.appendChild(spaces)
+            createlist.appendChild(createprice)
+            abc.appendChild(createlist)
+
+
+
+            // var itemprice = sessionStorage.getItem(JSON.parse(key1.price))
+            // var specific = JSON.stringify(itemname)
+            // console.log(itemname)
+            // console.log(itemprice)
+
+
+            // var a = document.createTextNode(finalcart[i].name)
+            // var b = document.createTextNode(finalcart[i].price)
+            // var empty = document.createTextNode(" ")
+            // var list1 = document.createElement('li');
+
+            // list1.appendChild(a)
+            // list1.appendChild(b)
+            // list1.appendChild(empty)
+            // cartul.appendChild(list1)
+            // sessionStorage.setItem("Item " + i,finalcart[i])
+
+        }
+        var orderto = document.getElementById('ordertotal')
+        orderto.innerHTML = ordertotal;
+
+
+        function placeOrder() {
+            alert('Thank you for your order!')
+            location.href = "index.html"
+        }
+// console.log(uzi[0].name)
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+</html>
